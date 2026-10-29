@@ -1,0 +1,39 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Yoga Class Enrollment</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 760px; margin: 40px auto; padding: 0 16px; color: #24322c; }
+        h1 { color: #28634b; }
+        form { background: #f3f8f5; border: 1px solid #d7e7dd; border-radius: 10px; padding: 20px; }
+        label { display: block; margin: 14px 0 6px; font-weight: bold; }
+        input, select { box-sizing: border-box; width: 100%; padding: 10px; border: 1px solid #aabbb1; border-radius: 5px; }
+        button { margin-top: 18px; padding: 11px 18px; border: 0; border-radius: 5px; color: white; background: #28634b; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Yoga Class Enrollment</h1>
+    <form action="<%= request.getContextPath() %>/enrollment-result" method="post">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" maxlength="100" required>
+
+        <label for="age">Age</label>
+        <input id="age" name="age" type="number" min="10" max="70" required>
+
+        <label for="batch">Batch</label>
+        <select id="batch" name="batch" required>
+            <option value="6 AM">6 AM</option>
+            <option value="7 AM">7 AM</option>
+            <option value="6 PM">6 PM</option>
+        </select>
+
+        <label for="fees">Fees (Rs.)</label>
+        <input id="fees" name="fees" type="number" min="0" step="0.01" required>
+
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
